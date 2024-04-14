@@ -312,6 +312,16 @@ zx zx
 
 //-------------------------------------------------------------------------------------------------
 
+wire[15:0] lmidi, rmidi;
+i2s_decoder Midi(clock, i2sIn, lmidi, rmidi);
+
+wire[15:0] lmix = { 1'b0, (lmidi[15:1]^15'h4000)+ left };
+wire[15:0] rmix = { 1'b0, (rmidi[15:1]^15'h4000)+right };
+
+dsg #(15) dsg1(clock, reset, lmix, dsg[1]);
+dsg #(15) dsg0(clock, reset, rmix, dsg[0]);
+i2s_encoder I2S(clock, i2sOut, lmix, rmix);
+
 wire[7:0] romQ;
 romzx rom(clock, memA1[16:0], romQ);
 
