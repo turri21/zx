@@ -7,9 +7,23 @@ module np1
 
 	output wire[ 1:0] sync,
 	output wire[17:0] rgb,
+	
+        input  wire       tape,
+	input  wire[ 2:0] i2sIn,
+
+	output wire[ 1:0] dsg,
+	output wire[ 2:0] i2sOut,
+
+	output wire       midi,
 
 	input  wire[ 1:0] ps2k,
+        inout  wire[ 1:0] ps2m,
 
+	output wire       joyCk,
+	output wire       joyLd,
+	output wire       joyS,
+	input  wire       joyD,
+	
 	output wire       sdcCs,
 	output wire       sdcCk,
 	output wire       sdcMosi,
@@ -33,7 +47,7 @@ module np1
 	output wire[ 1:0] dramBA,
 	output wire[12:0] dramA,
 
-	output wire       stm,
+	output wire       stm, // no stm on nepturri
 	output wire       led
 );
 //-------------------------------------------------------------------------------------------------
