@@ -211,6 +211,7 @@ set_global_assignment -name VERILOG_FILE ../hdl/soundbox.v
 set_global_assignment -name VERILOG_FILE ../hdl/specdrum.v
 set_global_assignment -name VERILOG_FILE ../hdl/soundrive.v
 set_global_assignment -name VERILOG_FILE ../hdl/turbosound.v
+set_global_assignment -name VERILOG_FILE ../hdl/i2s_encoder.v
 
 set_global_assignment -name QIP_FILE ips/pll0.qip
 set_global_assignment -name QIP_FILE ips/pll1.qip
